@@ -1,38 +1,47 @@
 package com.binyu.xia;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.Button;
+
+import com.binyu.xia.pattern.R;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+
+
+    @Bind(R.id.btn_abstract_factory_pattern)
+    Button btnAbstractFactoryPattern;
+    @Bind(R.id.btn_builder_pattern)
+    Button btnBuilderPattern;
+    @Bind(R.id.btn_clone_pattern)
+    Button btnClonePattern;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    @OnClick(R.id.btn_six_principle)
+    public void sixPrinciple(){
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    @OnClick(R.id.btn_single_pattern)
+    public void singlePattern(){
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    @OnClick(R.id.btn_factory_pattern)
+    public void factoryPattern(){
+
+    }
+
 }
